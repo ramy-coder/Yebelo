@@ -8,3 +8,6 @@ This is a code to divide the ERC20 tokens received into different slabs.
 3. Function  viewSlabDetails -> Parameter : Nil
 
 	When the depositor enquires, it states which slab the deposit is. 
+4. Function Slab values -> Parameter: Slab Index
+
+	When the depositor enquires, it states which slab value of the requested Slab Index

@@ -13,9 +13,9 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint64",
+						"internalType": "uint32",
 						"name": "noofTokens",
-						"type": "uint64"
+						"type": "uint32"
 					}
 				],
 				"name": "tokenDeposit",
@@ -31,6 +31,25 @@
 						"internalType": "uint8",
 						"name": "",
 						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint8",
+						"name": "slabInd",
+						"type": "uint8"
+					}
+				],
+				"name": "viewSlabvalues",
+				"outputs": [
+					{
+						"internalType": "uint32",
+						"name": "",
+						"type": "uint32"
 					}
 				],
 				"stateMutability": "view",
@@ -65,11 +84,11 @@
 	},
 	"sources": {
 		"Tokenslab.sol": {
-			"keccak256": "0xab6928979da721d377c60c1ad026c41b8c2c1446de03ef294e10707c3e4c6d79",
+			"keccak256": "0x57078a97b09ec7597487c00d516f0cf31cdf5aa18fc06f970a73a8e8096dcab1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://6162105be5b0602eeb4550b9db3a5c6b959c24ca239c83b4280c14dafd1b79a7",
-				"dweb:/ipfs/Qma49jmBCFmP8Md5sTRmtMe3inpypGkZZyWvH7urXUa2pc"
+				"bzz-raw://742ddf7eb28eda676cd80fc089e691558365902f85152b4ba860dff0963273de",
+				"dweb:/ipfs/QmTD7jyCjhJYNvG6XRi97n7XMG83m1SEva1t9fSVnfcAsZ"
 			]
 		}
 	},

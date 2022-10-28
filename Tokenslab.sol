@@ -4,7 +4,7 @@
     contract Tokenslab {
         uint8 currentSlab;
         uint32[5] slabLimits;
-        uint64[5] slabValues;
+        uint32[5] slabValues;
 
         constructor()
         {
@@ -14,17 +14,20 @@
             slabValues = [0,0,0,0,0];
         }
 
-        function tokenDeposit(uint64 noofTokens) public
+        function tokenDeposit(uint32 noofTokens) public
         {
             //When a ERC20 token is deposited, it occupies the highest level and if  the capacity reaches the maximum, it goes to the next lower level 
             slabValues[currentSlab] += noofTokens;
             if(slabValues[currentSlab] > slabLimits[currentSlab])
             {
-                overflowHandler(slabValues[currentSlab] - slabLimits[currentSlab]);
+                uint32 excess;
+                excess = slabValues[currentSlab] - slabLimits[currentSlab];
+                slabValues[currentSlab] -= excess;
+                overflowHandler(excess);
             }
         }
 
-        function overflowHandler(uint64 overFlow) private 
+        function overflowHandler(uint32 overFlow) private 
         {
             // an internal function logic to handle overflows and sorting the tokens into the correct slab
             slabValues[currentSlab] = slabLimits[currentSlab];
@@ -36,7 +39,10 @@
 
             if(slabValues[currentSlab] > slabLimits[currentSlab])
             {
-                overflowHandler(slabValues[currentSlab] - slabLimits[currentSlab]);
+                uint32 excess;
+                excess = slabValues[currentSlab] - slabLimits[currentSlab];
+                slabValues[currentSlab] -= excess;
+                overflowHandler(excess);
             }
             
         } 
@@ -45,6 +51,12 @@
         {
             // To view the current slab of the deposited tokens
             return(currentSlab);
+        }
+
+        function viewSlabvalues(uint8 slabInd) public view returns(uint32)
+        {
+            // To view the current slab values of the given Slab Index
+            return(slabValues[slabInd]);
         }
 
     }
