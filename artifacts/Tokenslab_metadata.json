@@ -1,0 +1,64 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint64",
+						"name": "noofTokens",
+						"type": "uint64"
+					}
+				],
+				"name": "tokenDeposit",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Tokenslab.sol": "Tokenslab"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Tokenslab.sol": {
+			"keccak256": "0x83e5dff4db0b946836014fd6327d123dfa8ea508f087924981b4cb6e1ad16482",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e475bf8ef80dd46c74113c04a2a44bfa3cc86924bf1f4a9d0776a82b7ed449bb",
+				"dweb:/ipfs/QmfFT7NSGA91oSTaFhThurxQ2RAgDZQiQ4xk2P2uc5TFRo"
+			]
+		}
+	},
+	"version": 1
+}
