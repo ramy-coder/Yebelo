@@ -18,18 +18,30 @@
             slabValues[currentSlab] += noofTokens;
             if(slabValues[currentSlab] > slabLimits[currentSlab])
             {
-                overflowHandler();
+                overflowHandler(slabValues[currentSlab] - slabLimits[currentSlab]);
             }
         }
 
-        function overflowHandler() private 
+        function overflowHandler(uint64 overFlow) private 
         {
-            uint64 overFlow;
-            overFlow = slabValues[currentSlab] - slabLimits[currentSlab];
+        //    overFlow = slabValues[currentSlab] - slabLimits[currentSlab];
             slabValues[currentSlab] = slabLimits[currentSlab];
             currentSlab = currentSlab - 1;
 
+            require(currentSlab >= 0, "All slabs are full, more tokens cannot be added");
+
+            slabValues[currentSlab] += overFlow;
+
+            if(slabValues[currentSlab] > slabLimits[currentSlab])
+            {
+                overflowHandler(slabValues[currentSlab] - slabLimits[currentSlab]);
+            }
             
         } 
+
+        function viewSlabDetails() public view returns(uint8)
+        {
+            return(currentSlab);
+        }
 
     }
