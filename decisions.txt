@@ -1,0 +1,6 @@
+Important decisions taken:
+
+1. Token Deposit Function makes a call to the overflow Handler function incase the value of the current slab 
+   exceeds the limit when the tokens are deposited.
+2. OverFlow handler function makes a recursive call to itself incase the value exceeds the slab again.
+3. If the value of the Deposit is greater than the last limit then an error is thrown

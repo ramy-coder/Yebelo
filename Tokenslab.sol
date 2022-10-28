@@ -8,13 +8,15 @@
 
         constructor()
         {
+            //initialiing the values 
             slabLimits = [100,200,300,400,500];
-            currentSlab = 4;
+            currentSlab = 4; //slabs are 4,3,3,1 and 0
             slabValues = [0,0,0,0,0];
         }
 
         function tokenDeposit(uint64 noofTokens) public
         {
+            //When a ERC20 token is deposited, it occupies the highest level and if  the capacity reaches the maximum, it goes to the next lower level 
             slabValues[currentSlab] += noofTokens;
             if(slabValues[currentSlab] > slabLimits[currentSlab])
             {
@@ -24,7 +26,7 @@
 
         function overflowHandler(uint64 overFlow) private 
         {
-        //    overFlow = slabValues[currentSlab] - slabLimits[currentSlab];
+            // an internal function logic to handle overflows and sorting the tokens into the correct slab
             slabValues[currentSlab] = slabLimits[currentSlab];
             currentSlab = currentSlab - 1;
 
@@ -41,6 +43,7 @@
 
         function viewSlabDetails() public view returns(uint8)
         {
+            // To view the current slab of the deposited tokens
             return(currentSlab);
         }
 

@@ -65,11 +65,11 @@
 	},
 	"sources": {
 		"Tokenslab.sol": {
-			"keccak256": "0xf5779e88fb6adc0de581403caa42fe47e86bbf92b568346a163f7df191e33ddc",
+			"keccak256": "0xab6928979da721d377c60c1ad026c41b8c2c1446de03ef294e10707c3e4c6d79",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://41a36d9c12f17c4c7b237d878533438e30f22ddf901729760c46c88578fa026d",
-				"dweb:/ipfs/QmUcF9zvoH838cbPuBXaj76vHVxpcjTvgXJDCZ3VqTE7UY"
+				"bzz-raw://6162105be5b0602eeb4550b9db3a5c6b959c24ca239c83b4280c14dafd1b79a7",
+				"dweb:/ipfs/Qma49jmBCFmP8Md5sTRmtMe3inpypGkZZyWvH7urXUa2pc"
 			]
 		}
 	},
